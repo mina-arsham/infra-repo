@@ -1,0 +1,26 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: local-test-s3-bucket
+  description: S3 bucket for local-test in dev environment
+  annotations:
+    github.com/project-slug: your-org/local-test-s3-bucket
+    backstage.io/techdocs-ref: dir:.
+  tags:
+    - aws
+    - s3
+    - terraform
+    - storage
+    - dev
+  links:
+    - url: https://console.aws.amazon.com/s3/buckets/local-test-dev
+      title: AWS Console
+      icon: cloud
+spec:
+  type: infrastructure
+  lifecycle: dev
+  owner: mina.aaa@gmail.com
+  system: cloud-infrastructure
+  dependsOn:
+    - resource:default/aws-account
+  providesApis: []
